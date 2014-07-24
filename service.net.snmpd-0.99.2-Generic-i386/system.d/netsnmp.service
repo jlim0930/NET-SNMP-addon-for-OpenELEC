@@ -1,0 +1,17 @@
+[Unit]
+Description=NET-SNMP software bundle
+After=graphical.target
+Before=xbmc.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=1
+ExecStart=/bin/sh -c "exec sh /storage/.xbmc/addons/service.web.lamp/bin/netsnmp.start"
+ExecStop=/bin/sh -c "exec sh /storage/.xbmc/addons/service.web.lamp/bin/netsnmp.stop"
+TimeoutStopSec=5
+Restart=no
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+Alias=netsnmp.service 

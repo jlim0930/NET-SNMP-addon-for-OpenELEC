@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /etc/profile
+
+# service setup
+#oe_setup_addon service.net.snmpd
+
+ADDON_ID=service.net.snmpd
+ADDON_DIR="$HOME/.xbmc/addons/$ADDON_ID"
+ADDON_HOME="$HOME/.xbmc/userdata/addon_data/$ADDON_ID"
+
+# and start them
+systemctl stop snmpd.service

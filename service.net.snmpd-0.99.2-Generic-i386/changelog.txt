@@ -1,0 +1,2 @@
+[B]0.99.2[/B]
+- initial version of snmpd addon

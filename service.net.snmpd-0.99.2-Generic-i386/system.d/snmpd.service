@@ -1,0 +1,12 @@
+[Unit]
+Description=NET-SNMP software bundle
+After=graphical.target
+Before=xbmc.service
+
+[Service]
+Type=forking
+ExecStart=/bin/sh -c "exec sh /storage/.xbmc/addons/service.net.snmpd/bin/snmpd.start"
+ExecStop=/bin/sh -c "exec sh /storage/.xbmc/addons/service.net.snmpd/bin/snmpd.stop"
+
+[Install]
+Alias=snmpd.service

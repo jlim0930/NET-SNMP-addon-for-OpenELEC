@@ -1,0 +1,15 @@
+#!/bin/sh
+
+. /etc/profile
+
+# service setup
+#oe_setup_addon service.net.snmpd
+
+ADDON_ID=service.net.snmpd
+ADDON_DIR="$HOME/.xbmc/addons/$ADDON_ID"
+ADDON_HOME="$HOME/.xbmc/userdata/addon_data/$ADDON_ID"
+
+chmod a+x $ADDON_DIR/bin/*
+chmod a+x $ADDON_DIR/sbin/*
+
+$ADDON_DIR/sbin/snmpd -LS0-6d -c $ADDON_DIR/snmpd.conf -M /storage/.xbmc/addons/service.net.snmpd/share/snmp/mibs
