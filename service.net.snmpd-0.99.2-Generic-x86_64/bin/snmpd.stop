@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ADDON_ID=service.net.snmpd
+ADDON_DIR="$HOME/.xbmc/addons/$ADDON_ID"
+ADDON_HOME="$HOME/.xbmc/userdata/addon_data/$ADDON_ID"
+
+PID=$(ps aux | grep "snmp" | grep -v grep | awk '{print $1}')
+if [ -n "$PID" ]; then
+  kill -TERM $PID
+fi
